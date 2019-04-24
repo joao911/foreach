@@ -3,7 +3,9 @@ $nome = "João Paulo";
 $idade = 26;
 $array = ["nome"=>"Vinicius  Oliveira","sobrenome"=>"Oliveira",21];
 $usuario = ["nome"=>"João Paulo", "sobrenome"=>"Duarte"];
-$produto = [ "nome"=>"produto qualquer", "preco"=>"$1.99", "descricao"=>"essa é uma descrição diferente"];
+$produtos = [[ "nome"=>"produto qualquer", "preco"=>"$1.99", "descricao"=>"essa é uma descrição diferente"],
+             ["nome"=>"Produto 2", "descricao"=>"outra descricão", "preco"=>"2.90"]
+];
 /* variáveis php*/
 ?>
 <!DOCTYPE html>
@@ -60,37 +62,19 @@ $produto = [ "nome"=>"produto qualquer", "preco"=>"$1.99", "descricao"=>"essa é
 
     </div>
     <div class="row">
+        <?php foreach($produtos as $produto){?>
         <div class="col-lg-4">
             <div class="card" style="width: 18rem;">
                 <img src="img/camisa.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $produto['nome']?></h5>
-                    <p class="card-text"><?php echo $produto['descricao']?></p>
-                    <a href="#" class="btn btn-primary"><?php echo $produto['preco']?></a>
+                    <h5 class="card-title"><?php echo $produto['nome']; ?></h5>
+                    <p class="card-text"><?php echo  $produto['descricao']; ?></p>
+                    <a href="#" class="btn btn-primary"><?php echo $produto['preco']; ?></a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img/camisa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $produto['nome']?></h5>
-                    <p class="card-text"><?php echo $produto['descricao']?></p>
-                    <a href="#" class="btn btn-primary"><?php echo $produto['preco']?></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-        <div class="card" style="width: 18rem;">
-                <img src="img/camisa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $produto['nome']?></h5>
-                    <p class="card-text"><?php echo $produto['descricao']?></p>
-                    <a href="#" class="btn btn-primary"><?php echo $produto['preco']?></a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php } ?>
+    </div>    
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
